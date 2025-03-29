@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.css"
+    />
+    <link rel="stylesheet" href="../style/profile.css">
+    <title>Student Profile</title>
+    <style>
+     
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navdiv">
+        <div class="logo">
+          <h1>MONLIMAR DEVELOPMENT ACADEMY</h1>
+        </div>
+        <ul class="nav-links">
+          <li>
+            <a href="../dashboard.html"
+              ><i class="icon fas fa-home"></i> Home</a
+            >
+            <ul class="dropdown">
+              <li>
+                <a href="../home/facilities.html"
+                  ><i class="fas fa-building"></i> Facilities</a
+                >
+              </li>
+              <li>
+                <a href="../home/staff.html"
+                  ><i class="fas fa-users"></i> School Personel</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li></li>
+          <li>
+            <a href="../../index.html"
+              ><i class="icon fas fa-calendar-alt"></i> Calendar</a
+            >
+          </li>
+          <li>
+            <a href="../org/org.html"
+              ><i class="icon fas fa-sitemap"></i> Organization</a
+            >
+          </li>
+          <li>
+            <a href="profile.html" class="active"
+              ><i class="icon fas fa-user"></i> Profile</a
+            >
+          </li>
+          <li>
+            <button class="logout-btn" onclick="confirmLogout()">
+              <i class="icon fas fa-sign-out-alt"></i> Log Out
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Profile Header -->
+      <section class="profile-header animated">
+        <img src="images/logo.jpg.jpg" alt="Student Profile" class="profile-pic" />
+        <div class="profile-info">
+          <h1>Dirk Carfielo</h1>
+          <p>ICT - Grade 11 Gates | Student #143</p>
+          <div class="student-status">
+            <span class="status-badge active">Active</span>
+            <span class="status-badge honor">Honor Student</span>
+          </div>
+        </div>
+        <button class="edit-profile-btn" onclick="editProfile()">
+          <i class="fas fa-edit"></i> Edit Profile
+        </button>
+      </section>
+
+      <!-- Progress Cards -->
+      <section class="progress-cards animated delay-1">
+        <div class="progress-card">
+          <i class="fas fa-chart-line"></i>
+          <h3>Overall GPA</h3>
+          <div class="progress-value">3.75</div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 90%"></div>
+          </div>
+          <p>Top 10% of your class</p>
+        </div>
+
+        <div class="progress-card">
+          <i class="fas fa-book"></i>
+          <h3>Courses Completed</h3>
+          <div class="progress-value">12/15</div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 80%"></div>
+          </div>
+          <p>3 courses remaining this semester</p>
+        </div>
+
+        <div class="progress-card">
+          <i class="fas fa-check-circle"></i>
+          <h3>Attendance Rate</h3>
+          <div class="progress-value">94%</div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 94%"></div>
+          </div>
+          <p>Better than 85% of students</p>
+        </div>
+
+        <div class="progress-card">
+          <i class="fas fa-clock"></i>
+          <h3>Class Hours</h3>
+          <div class="progress-value">6 hours</div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 70%"></div>
+          </div>
+          <p>This day class time</p>
+        </div>
+      </section>
+
+      <!-- Basic Info Card -->
+      <section class="basic-info animated delay-1">
+        <table>
+          <tr>
+            <th>Strand</th>
+            <th>Semester</th>
+            <th>Grade & Section</th>
+            <th>Student Number</th>
+            <th>School Year</th>
+          </tr>
+          <tr>
+            <td>Information and Communication Technology</td>
+            <td>2nd Semester</td>
+            <td>11 - Gates</td>
+            <td>#0143</td>
+            <td>2024-2025</td>
+          </tr>
+        </table>
+      </section>
+
+      <!-- Personal Info Section -->
+      <section class="personal-info-section">
+        <div class="info-card animated delay-1">
+          <h3>STUDENT INFORMATION</h3>
+          <table>
+            <tr>
+              <th>Full Name:</th>
+              <td>Dirk Carfielo</td>
+            </tr>
+            <tr>
+              <th>Date of Birth:</th>
+              <td>February 08, 2008</td>
+            </tr>
+            <tr>
+              <th>Gender:</th>
+              <td>Male</td>
+            </tr>
+            <tr>
+              <th>Contact Number:</th>
+              <td>+63 987 654 3210</td>
+            </tr>
+            <tr>
+              <th>Email Address:</th>
+              <td>kridmapaglaham24/7@gmail.com</td>
+            </tr>
+            <tr>
+              <th>Address:</th>
+              <td>14-A Marupok St.</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="info-card animated delay-2">
+          <h3>GUARDIAN INFORMATION</h3>
+          <table>
+            <tr>
+              <th>Name:</th>
+              <td>Charles Vizcarra</td>
+            </tr>
+            <tr>
+              <th>Relationship:</th>
+              <td>Father</td>
+            </tr>
+            <tr>
+              <th>Contact Number:</th>
+              <td>+63 956 340 5062</td>
+            </tr>
+            <tr>
+              <th>Email Address:</th>
+              <td>charles.vizcarra@email.com</td>
+            </tr>
+            <tr>
+              <th>Occupation:</th>
+              <td>Software Engineer</td>
+            </tr>
+            <tr>
+              <th>Emergency Contact:</th>
+              <td>+63 912 345 6789</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <!-- Recent Activities Section -->
+      <section class="activities-section animated delay-2">
+        <div class="section-header">
+          <h2>Recent Activities</h2>
+          <p>Your latest actions and system notifications</p>
+        </div>
+
+        <ul class="activity-list">
+          <li class="activity-item">
+            <div class="activity-icon">
+              <i class="fas fa-book"></i>
+            </div>
+            <div class="activity-content">
+              <div class="activity-title">Submitted Programming Assignment</div>
+              <p>Completed and submitted the Python programming project</p>
+              <div class="activity-time">Today, 2:45 PM</div>
+            </div>
+          </li>
+          <li class="activity-item">
+            <div class="activity-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="activity-content">
+              <div class="activity-title">Attendance Marked</div>
+              <p>Present in Physical Science class</p>
+              <div class="activity-time">Yesterday, 10:30 AM</div>
+            </div>
+          </li>
+          <li class="activity-item">
+            <div class="activity-icon">
+              <i class="fas fa-comment"></i>
+            </div>
+            <div class="activity-content">
+              <div class="activity-title">New Message from Advisor</div>
+              <p>Mr. Johnson sent you a message about your project</p>
+              <div class="activity-time">Yesterday, 4:15 PM</div>
+            </div>
+          </li>
+          <li class="activity-item">
+            <div class="activity-icon">
+              <i class="fas fa-trophy"></i>
+            </div>
+            <div class="activity-content">
+              <div class="activity-title">Achievement Unlocked</div>
+              <p>Top performer in Statistics for February</p>
+              <div class="activity-time">2 days ago</div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Grades Section -->
+      <section class="grades-section animated delay-2">
+        <div class="section-header">
+          <h2>Academic Performance</h2>
+          <p>Current semester grades and performance metrics</p>
+        </div>
+
+        <div class="table-responsive">
+          <table class="grades-table">
+            <thead>
+              <tr>
+                <th>Subject</th>
+                <th>Teacher</th>
+                <th>1st Quarter</th>
+                <th>2nd Quarter</th>
+                <th>3rd Quarter</th>
+                <th>4th Quarter</th>
+                <th>Final Grade</th>
+                <th>Remarks</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Statistics & Probability</td>
+                <td>Mrs. Golingan</td>
+                <td class="grade-A">92</td>
+                <td class="grade-A">94</td>
+                <td class="grade-A">93</td>
+                <td>-</td>
+                <td class="grade-A">93</td>
+                <td>Excellent</td>
+              </tr>
+              <tr>
+                <td>Physical Science</td>
+                <td>Ms. Ignacio</td>
+                <td class="grade-B">88</td>
+                <td class="grade-A">91</td>
+                <td class="grade-B">89</td>
+                <td>-</td>
+                <td class="grade-B">89</td>
+                <td>Very Good</td>
+              </tr>
+              <tr>
+                <td>Personal Development</td>
+                <td>Mr. Sta. Ana</td>
+                <td class="grade-A">95</td>
+                <td class="grade-A">93</td>
+                <td class="grade-A">94</td>
+                <td>-</td>
+                <td class="grade-A">94</td>
+                <td>Excellent</td>
+              </tr>
+              <tr>
+                <td>Computer Programming</td>
+                <td>Ms. Rol</td>
+                <td class="grade-A">96</td>
+                <td class="grade-A">97</td>
+                <td class="grade-A">95</td>
+                <td>-</td>
+                <td class="grade-A">96</td>
+                <td>Outstanding</td>
+              </tr>
+              <tr>
+                <td>Practical Research</td>
+                <td>Mr. Roldan</td>
+                <td class="grade-B">87</td>
+                <td class="grade-B">89</td>
+                <td class="grade-B">88</td>
+                <td>-</td>
+                <td class="grade-B">88</td>
+                <td>Very Good</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Upcoming Events Section -->
+      <section class="events-section animated delay-3">
+        <div class="section-header">
+          <h2>Upcoming Events</h2>
+          <p>Important dates and school activities</p>
+        </div>
+
+        <ul class="event-list">
+          <li class="event-item">
+            <div class="event-date">
+              <div class="event-day">15</div>
+              <div class="event-month">Mar</div>
+            </div>
+            <div class="event-details">
+              <div class="event-title">Final Project Submission</div>
+              <div class="event-time">
+                <i class="fas fa-clock"></i> Due by 11:59 PM
+              </div>
+            </div>
+          </li>
+          <li class="event-item">
+            <div class="event-date">
+              <div class="event-day">18</div>
+              <div class="event-month">Mar</div>
+            </div>
+            <div class="event-details">
+              <div class="event-title">Parent-Teacher Conference</div>
+              <div class="event-time">
+                <i class="fas fa-clock"></i> 2:00 PM - 4:00 PM
+              </div>
+            </div>
+          </li>
+          <li class="event-item">
+            <div class="event-date">
+              <div class="event-day">22</div>
+              <div class="event-month">Mar</div>
+            </div>
+            <div class="event-details">
+              <div class="event-title">School Science Fair</div>
+              <div class="event-time">
+                <i class="fas fa-clock"></i> All Day Event
+              </div>
+            </div>
+          </li>
+          <li class="event-item">
+            <div class="event-date">
+              <div class="event-day">28</div>
+              <div class="event-month">Mar</div>
+            </div>
+            <div class="event-details">
+              <div class="event-title">Semester Exams Begin</div>
+              <div class="event-time"><i class="fas fa-clock"></i> 8:00 AM</div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Attendance Section -->
+      <section class="attendance-section animated delay-3">
+        <div class="section-header">
+          <h2>Attendance Record</h2>
+          <p>Recent attendance history and statistics</p>
+        </div>
+
+        <div class="table-responsive">
+          <table class="attendance-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Day</th>
+                <th>Subject</th>
+                <th>Time</th>
+                <th>Status</th>
+                <th>Remarks</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Feb 1, 2025</td>
+                <td>Monday</td>
+                <td>Mathematics</td>
+                <td>8:00 AM - 9:30 AM</td>
+                <td class="status-present">Present</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>Feb 2, 2025</td>
+                <td>Tuesday</td>
+                <td>Physical Science</td>
+                <td>10:00 AM - 11:30 AM</td>
+                <td class="status-absent">Absent</td>
+                <td>Medical Leave</td>
+              </tr>
+              <tr>
+                <td>Feb 3, 2025</td>
+                <td>Wednesday</td>
+                <td>Computer Programming</td>
+                <td>1:00 PM - 2:30 PM</td>
+                <td class="status-present">Present</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>Feb 4, 2025</td>
+                <td>Thursday</td>
+                <td>English</td>
+                <td>9:00 AM - 10:30 AM</td>
+                <td class="status-late">Late</td>
+                <td>15 minutes</td>
+              </tr>
+              <tr>
+                <td>Feb 5, 2025</td>
+                <td>Friday</td>
+                <td>Personal Development</td>
+                <td>11:00 AM - 12:30 PM</td>
+                <td class="status-present">Present</td>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div
+          class="attendance-stats"
+          style="margin-top: 2rem; text-align: center"
+        >
+          <div style="display: inline-block; margin: 0 1.5rem">
+            <h3 style="color: var(--primary-color); margin-bottom: 0.5rem">
+              Attendance Rate
+            </h3>
+            <div
+              style="
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                background: conic-gradient(var(--primary-color) 85%, #eee 15%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto;
+                position: relative;
+              "
+            >
+              <div
+                style="
+                  width: 90px;
+                  height: 90px;
+                  background: white;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                "
+              >
+                <span
+                  style="
+                    font-weight: 700;
+                    font-size: 1.5rem;
+                    color: var(--primary-color);
+                  "
+                  >85%</span
+                >
+              </div>
+            </div>
+          </div>
+          <div style="display: inline-block; margin: 0 1.5rem">
+            <h3 style="color: var(--primary-color); margin-bottom: 0.5rem">
+              Days Present
+            </h3>
+            <div
+              style="
+                font-size: 2.5rem;
+                font-weight: 700;
+                color: var(--primary-color);
+              "
+            >
+              42
+            </div>
+          </div>
+          <div style="display: inline-block; margin: 0 1.5rem">
+            <h3 style="color: var(--primary-color); margin-bottom: 0.5rem">
+              Days Absent
+            </h3>
+            <div
+              style="
+                font-size: 2.5rem;
+                font-weight: 700;
+                color: var(--primary-color);
+              "
+            >
+              3
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Action Buttons -->
+      <div class="action-buttons animated delay-3">
+        <button class="action-btn" onclick="downloadReport()">
+          <i class="fas fa-file-pdf"></i> Download Report Card
+        </button>
+        <button class="action-btn secondary" onclick="sendMessage()">
+          <i class="fas fa-envelope"></i> Message Advisor
+        </button>
+        <button class="action-btn secondary" onclick="requestDocument()">
+          <i class="fas fa-file-alt"></i> Request Document
+        </button>
+        <button class="action-btn secondary" onclick="viewSchedule()">
+          <i class="fas fa-calendar-alt"></i> View Class Schedule
+        </button>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-about">
+          <div class="footer-logo">MONLIMAR</div>
+          <p>
+            Monlimar Development Academy is committed to providing quality
+            education that empowers students to achieve their full potential.
+          </p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul>
+            <li>
+              <a href="../dashboard.html"
+                ><i class="fas fa-chevron-right"></i> Home</a
+              >
+            </li>
+            <li>
+              <a href="/index.html"
+                ><i class="fas fa-chevron-right"></i> School Calendar</a
+              >
+            </li>
+            <li>
+              <a href="achievement.html"
+                ><i class="fas fa-chevron-right"></i> Achievements</a
+              >
+            </li>
+            <li>
+              <a href="profile.html"
+                ><i class="fas fa-chevron-right"></i> Student Profile</a
+              >
+            </li>
+            <li>
+              <a href="facilities.html"
+                ><i class="fas fa-chevron-right"></i> School Facilities</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h3 class="footer-heading">Contact Us</h3>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> 123 Education Ave., Learning
+            City
+          </p>
+          <p><i class="fas fa-phone-alt"></i> (02) 1234-5678</p>
+          <p><i class="fas fa-envelope"></i> info@monlimar.edu</p>
+          <p><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 5:00 PM</p>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>&copy; 2025 Monlimar Development Academy. All Rights Reserved.
+          <br> Created by: Gates&Page</p>
+      </div>
+    </footer>
+
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle" onclick="toggleDarkMode()">
+      <i class="fas fa-moon"></i>
+    </div>
+
+    <script>
+      // Dark Mode Toggle
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+        const icon = document.querySelector(".dark-mode-toggle i");
+        if (document.body.classList.contains("dark-mode")) {
+          icon.classList.remove("fa-moon");
+          icon.classList.add("fa-sun");
+          localStorage.setItem("darkMode", "enabled");
+        } else {
+          icon.classList.remove("fa-sun");
+          icon.classList.add("fa-moon");
+          localStorage.setItem("darkMode", "disabled");
+        }
+      }
+
+      // Check for saved dark mode preference
+      if (localStorage.getItem("darkMode") === "enabled") {
+        document.body.classList.add("dark-mode");
+        document
+          .querySelector(".dark-mode-toggle i")
+          .classList.remove("fa-moon");
+        document.querySelector(".dark-mode-toggle i").classList.add("fa-sun");
+      }
+
+      // Logout Confirmation
+      function confirmLogout() {
+        if (confirm("Are you sure you want to log out?")) {
+          // Redirect to logout page or perform logout action
+          window.location.href = "../logout.html";
+        }
+      }
+
+      // Edit Profile
+      function editProfile() {
+        alert("Edit profile feature will be available soon!");
+        // In a real implementation, this would open a modal or redirect to an edit page
+      }
+
+      // Download Report
+      function downloadReport() {
+        alert("Preparing your report card for download...");
+        // In a real implementation, this would generate and download a PDF
+      }
+
+      // Send Message
+      function sendMessage() {
+        window.location.href =
+          "mailto:carfielodirk08@gmail.com?subject=Message%20from%20James%20Carfielo";
+      }
+
+      function requestDocument() {
+        const email = prompt("Enter your email address:");
+        if (!email) {
+          alert("Email is required to proceed.");
+          return;
+        }
+
+        const docType = prompt(
+          "What document would you like to request? (e.g., Transcript, Certificate)"
+        );
+        if (!docType) {
+          alert("Document type is required.");
+          return;
+        }
+
+        const subject = encodeURIComponent("Document Request");
+        const body = encodeURIComponent(
+          `Hello,\n\nI would like to request the following document:\n\nDocument Type: ${docType}\nEmail: ${email}\n\nThank you!`
+        );
+
+        // Redirect to Gmail with pre-filled email
+        window.location.href = `https://mail.google.com/mail/?view=cm&fs=1&to=carfielodirk08@gmail.com&su=${subject}&body=${body}`;
+      }
+
+      // Sample class schedule data
+      const classSchedule = [
+        { subject: "reading", time: "8:00 AM - 9:30 AM", day: "Monday" },
+        { subject: "Science", time: "10:00 AM - 11:30 AM", day: "Tuesday" },
+        { subject: "English", time: "1:00 PM - 2:30 PM", day: "Wednesday" },
+        { subject: "History", time: "3:00 PM - 4:30 PM", day: "Thursday" },
+        { subject: "PE", time: "9:00 AM - 10:30 AM", day: "Friday" },
+      ];
+
+      function viewSchedule() {
+        let scheduleHTML = "<h2>📅 Your Class Schedule</h2><ul>";
+        classSchedule.forEach((schedule) => {
+          scheduleHTML += `<li><strong>${schedule.subject}</strong> <br> 🕒 ${schedule.time} <br> 📆 ${schedule.day}</li>`;
+        });
+        scheduleHTML += "</ul>";
+
+        // Inject Unique CSS dynamically
+        if (!document.getElementById("scheduleStyles")) {
+          const style = document.createElement("style");
+          style.id = "scheduleStyles";
+          style.innerHTML = `
+            /* Unique Modal Styling - Glassmorphism */
+            .modal {
+                display: none; 
+                position: fixed;
+                z-index: 1000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                backdrop-filter: blur(8px);
+                background-color: rgba(0, 0, 0, 0.4);
+                animation: fadeIn 0.3s ease-in-out;
+            }
+            .modal-content {
+                background: rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(15px);
+                border-radius: 15px;
+                padding: 20px;
+                width: 60%;
+                max-width: 400px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+                text-align: center;
+                color: #fff;
+                font-family: 'Poppins', sans-serif;
+                animation: slideIn 0.4s ease-in-out;
+            }
+            .close {
+                position: absolute;
+                top: 15px;
+                right: 20px;
+                color: #ff6b6b;
+                font-size: 28px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+            .close:hover {
+                color: #ff3b3b;
+                transform: scale(1.1);
+            }
+            ul {
+                list-style-type: none;
+                padding: 0;
+            }
+            li {
+                margin: 15px 0;
+                padding: 10px;
+                background: rgba(255, 255, 255, 0.15);
+                border-radius: 8px;
+                font-size: 18px;
+                font-weight: 500;
+                transition: transform 0.3s;
+            }
+            li:hover {
+                transform: scale(1.05);
+                background: rgba(255, 255, 255, 0.25);
+            }
+            h2 {
+                font-size: 22px;
+                font-weight: bold;
+            }
+
+            /* Animations */
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            @keyframes slideIn {
+                from { transform: scale(0.9); opacity: 0; }
+                to { transform: scale(1); opacity: 1; }
+            }
+        `;
+          document.head.appendChild(style);
+        }
+
+        // Create a modal if not exists
+        let modal = document.getElementById("scheduleModal");
+        if (!modal) {
+          modal = document.createElement("div");
+          modal.id = "scheduleModal";
+          modal.classList.add("modal");
+          modal.innerHTML = `
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div id="scheduleContainer">${scheduleHTML}</div>
+            </div>
+        `;
+          document.body.appendChild(modal);
+        } else {
+          document.getElementById("scheduleContainer").innerHTML = scheduleHTML;
+        }
+
+        // Show modal
+        modal.style.display = "flex";
+      }
+
+      function closeModal() {
+        document.getElementById("scheduleModal").style.display = "none";
+      }
+
+      // Close modal when clicking outside the content
+      window.onclick = function (event) {
+        let modal = document.getElementById("scheduleModal");
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+
+      // Animation on scroll
+      window.addEventListener("scroll", function () {
+        const elements = document.querySelectorAll(".animated");
+
+        elements.forEach((element) => {
+          const elementPosition = element.getBoundingClientRect().top;
+          const screenPosition = window.innerHeight / 1.2;
+
+          if (elementPosition < screenPosition) {
+            element.style.opacity = "1";
+            element.style.transform = "translateY(0)";
+          }
+        });
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener("click", function (e) {
+        if (!e.target.closest(".nav-links li")) {
+          document.querySelectorAll(".dropdown").forEach((dropdown) => {
+            dropdown.style.display = "none";
+          });
+        }
+      });
+
+      // Mobile menu toggle for smaller screens
+      const mobileMenuBtn = document.createElement("div");
+      mobileMenuBtn.className = "mobile-menu-btn";
+      mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+
+      if (window.innerWidth <= 768) {
+        document.querySelector(".navdiv").appendChild(mobileMenuBtn);
+
+        mobileMenuBtn.addEventListener("click", function () {
+          document.querySelector(".nav-links").classList.toggle("show");
+        });
+      }
+    </script>
+  </body>
+</html>

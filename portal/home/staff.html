@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.css">
+    <link rel="stylesheet" href="../style/staff.css">
+    <title>STAFF</title>
+    <style>
+        
+    </style>
+</head>
+<body> 
+    <nav class="navbar">
+    <div class="navdiv">
+        <div class="logo">
+            <h1>MONLIMAR DEVELOPMENT ACADEMY</h1>    
+        </div>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <!-- Corrected Active Link -->
+            <li>
+                <a href="../dashboard.html"><i class="icon fas fa-home"></i> Home</a>
+                <ul class="dropdown">
+                    <li><a href="facilities.html"><i class="fas fa-building"></i> Facilities</a></li>
+                    <li><a href="staff.html" class="active"><i class="fas fa-users"></i> School Personnel</a></li>
+                </ul>
+            </li>
+            <li><a href="../../index.html"><i class="icon fas fa-calendar-alt"></i> Calendar</a></li>
+            <li><a href="../org/org.html"><i class="icon fas fa-sitemap"></i> Organization</a></li>
+            <li><a href="../profile/profile.html"><i class="icon fas fa-user"></i> Profile</a></li>
+            <li class="dark-mode-toggle">
+                <button id="darkModeToggle"><i class="fas fa-moon"></i></button>
+            </li>
+        </ul>
+    </div>
+</nav>    
+
+
+    <section id="project">
+        <div class="container">
+            <div class="item-link">
+                <span class="item-links menu-active" data-name="all">All</span>
+                <span class="item-links" data-name="admin">Admin</span>
+                <span class="item-links" data-name="elem">Elementary Dept.</span>
+                <span class="item-links" data-name="jhs">JHS Dept.</span>
+                <span class="item-links" data-name="shs">SHS Dept.</span>
+                <span class="item-links" data-name="staff">Non-teaching Staff</span>
+            </div>
+
+            <div class="gallery">
+
+                <div class="project-img" data-name="admin">
+                    <img src="../teach/admin/maam.lillan.jpg">
+                    <div class="overlay">
+                        <h4>Dr. Lillan S. Roldan</h4>
+                        <p>School Funder</p>
+                    </div>
+                </div>
+                <div class="project-img" data-name="admin">
+                    <img src="../teach/admin/sir.m.roldan.jpg">
+                    <div class="overlay">
+                        <h4>Mr. Mikhail Roldan </h4>
+                        <p>School President</p>
+                    </div>
+                </div>
+                <div class="project-img" data-name="admin">
+                    <img src="../teach/admin/maam.julia.jpg">
+                    <div class="overlay">
+                        <h4>Ms. Julia Villanueva</h4>
+                        <p>School Vice President</p>
+                    </div>
+                </div>
+                <div class="project-img" data-name="admin">
+                    <img src="../teach/admin/sir.alex.jpg">
+                    <div class="overlay">
+                        <h4>Mr. Alex N. Ignacio</h4>
+                        <p>School Director</p>
+                    </div>
+                </div>
+                <div class="project-img" data-name="admin">
+                    <img src="../teach/admin/sir.davenh.jpg">
+                    <div class="overlay">
+                        <h4>Mr. Davenh A. Adduru </h4>
+                        <p>Head Teacher of JHS</p>
+                    </div>
+                </div>
+                <div class="project-img" data-name="admin">
+                    <img src="../teach/tc/image.png">
+                    <div class="overlay">
+                        <h4>Mr.Zeno L. Labrador</h4>
+                        <p>Grade 11 Head Teacher</p>
+                    </div>
+                </div>
+                <div class="project-img" data-name="jhs">
+                    <img src="../teach/tc/image-5.png">
+                    <div class="overlay">
+                        <h4>Ms. Sheeva May Rol</h4>
+                        <p>JHS Teacher</p>
+                    </div>
+                </div>
+                <div class="project-img" data-name="jhs">
+                    <img src="../teach/tc/image-4.png">
+                    <div class="overlay">
+                        <h4>Ms. Joehanna Delgado</h4>
+                        <p>JHS Teacher</p>
+                    </div>
+                </div>
+                <div class="project-img" data-name="jhs">
+                    <img src="../teach/tc/image-3.png">
+                    <div class="overlay">
+                        <h4>Mr. Ruzzel Taylan</h4>
+                        <p>JHS Teacher</p>
+                    </div>
+                </div>
+                <div class="project-img" data-name="jhs">
+                    <img src="../teach/tc/image-2.png">
+                    <div class="overlay">
+                        <h4>Mr. Raymond Tamayo</h4>
+                        <p>JHS Teacher</p>
+                    </div>
+                </div>
+                <div class="project-img" data-name="shs">
+                    <img src="../teach/Ma'am Aloners.JPG">
+                    <div class="overlay">
+                        <h4>Ms.Alona M. Ambat</h4>
+                        <p>SHS Teacher</p>
+                    </div>
+                </div>
+                <div class="project-img" data-name="shs">
+                    <img src="../teach/Ma'am erika.JPG">
+                    <div class="overlay">
+                        <h4>Ms.Erika S. Tabudlan</h4>
+                        <p>SHS Teacher</p>
+                    </div>
+                </div>
+                <div class="project-img" data-name="shs">
+                    <img src="../teach/Ma'am g.JPG">
+                    <div class="overlay">
+                        <h4>Ms.Gessele S. Golingan</h4>
+                        <p>SHS Teacher</p>
+                    </div>
+                </div>
+                <div class="project-img" data-name="shs">
+                    <img src="../teach/Ma'am joppy.JPG">
+                    <div class="overlay">
+                        <h4>Ms.Irene C. Maddawin</h4>
+                        <p>SHS Teacher</p>
+                    </div>
+                </div>
+                <div class="project-img" data-name="shs">
+                    <img src="../teach/Ma'am jusa.JPG">
+                    <div class="overlay">
+                        <h4>Ms.Jossalyna M. Anonuevo</h4>
+                        <p>SHS Teacher</p>
+                    </div>
+                </div>
+                <div class="project-img" data-name="shs">
+                    <img src="../teach/Ma'am Riot games.JPG">
+                    <div class="overlay">
+                        <h4>Ms.Senika S. Tamang</h4>
+                        <p>SHS Teacher</p>
+                    </div>
+                </div>
+                <div class="project-img" data-name="shs">
+                    <img src="../teach/Ma'am Veron.JPG">
+                    <div class="overlay">
+                        <h4>Ms.Veronica O. Tatoy</h4>
+                        <p>SHS Teacher</p>
+                    </div>
+                </div>
+                <div class="project-img" data-name="shs">
+                    <img src="../teach/Mx petchy.JPG">
+                    <div class="overlay">
+                        <h4>Mr.Christian Jay D. Alpechi</h4>
+                        <p>SHS Teacher</p>
+                    </div>
+                </div>
+                <div class="project-img" data-name="shs">
+                    <img src="../teach/Sir bry.JPG">
+                    <div class="overlay">
+                        <h4>Mr.Brian Lester Y. Diaz</h4>
+                        <p>SHS Teacher</p>
+                    </div>
+                </div>
+                <div class="project-img" data-name="shs">
+                    <img src="../teach/SIR JUP.JPG">
+                    <div class="overlay">
+                        <h4>Mr. Joffrey Dela M. Torre</h4>
+                        <p>SHS Teacher</p>
+                    </div>
+                </div>
+                <div class="project-img" data-name="shs">
+                    <img src="../teach/Sir Should we legallized death penalty.JPG">
+                    <div class="overlay">
+                        <h4>Mr.Karl Kevin G. Roldan </h4>
+                        <p>SHS Teacher</p>
+                    </div>
+                </div>
+                <div class="project-img" data-name="shs">
+                    <img src="../teach/tc/image-1.png">
+                    <div class="overlay">
+                        <h4>Mr.John Loyd P. Sta ana</h4>
+                        <p>SHS Teacher</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+          <div class="footer-about">
+            <div class="footer-logo">MONLIMAR</div>
+            <p>
+              Monlimar Development Academy is committed to providing quality
+              education that empowers students to achieve their full potential.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+  
+          <div class="footer-links">
+            <h3 class="footer-heading">Quick Links</h3>
+            <ul>
+              <li>
+                <a href="dashboard.html"
+                  ><i class="fas fa-chevron-right"></i> Home</a
+                >
+              </li>
+              <li>
+                <a href="index.html"
+                  ><i class="fas fa-chevron-right"></i> School Calendar</a
+                >
+              </li>
+              <li>
+                <a href="achievement.html"
+                  ><i class="fas fa-chevron-right"></i> Achievements</a
+                >
+              </li>
+              <li>
+                <a href="profile/profile.html"
+                  ><i class="fas fa-chevron-right"></i> Student Profile</a
+                >
+              </li>
+              <li>
+                <a href="facilities.html"
+                  ><i class="fas fa-chevron-right"></i> School Facilities</a
+                >
+              </li>
+            </ul>
+          </div>
+  
+          <div class="footer-contact">
+            <h3 class="footer-heading">Contact Us</h3>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> 123 Education Ave., Learning
+              City
+            </p>
+            <p><i class="fas fa-phone-alt"></i> (02) 1234-5678</p>
+            <p><i class="fas fa-envelope"></i> info@monlimar.edu</p>
+            <p><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 5:00 PM</p>
+          </div>
+        </div>
+  
+        <div class="copyright">
+          <p>&copy; 2025 Monlimar Development Academy. All Rights Reserved.
+            <br> Created by: Gates&Page</p>
+        </div>
+      </footer>
+
+
+
+    <script>
+        // Select elements
+        let filterItems = document.querySelector('.item-link');
+        let filterImages = document.querySelectorAll('.project-img'); // Select all project images
+
+        filterItems.addEventListener('click', (selectedItem) => {
+            if (selectedItem.target.classList.contains('item-links')) {
+                // Remove active class from the previous button and add it to the selected button
+                document.querySelector('.menu-active').classList.remove('menu-active');
+                selectedItem.target.classList.add('menu-active');
+
+                let filterName = selectedItem.target.getAttribute('data-name');
+
+                // Loop through all images and apply filter
+                filterImages.forEach((image) => {
+                    let filterData = image.getAttribute('data-name');
+                    if (filterName === 'all' || filterData === filterName) {
+                        image.style.display = 'block'; // Show the image
+                    } else {
+                        image.style.display = 'none'; // Hide the image
+                    }
+                });
+            }
+        });
+
+
+
+         // JavaScript for dropdown toggle on click
+         document.querySelectorAll('li').forEach(function(item) {
+            item.addEventListener('click', function(e) {
+                if (item.querySelector('.dropdown')) {
+                    const dropdown = item.querySelector('.dropdown');
+                    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+                    e.stopPropagation();
+                }
+            });
+        });
+
+        // Close dropdown if clicked outside
+        window.addEventListener('click', function() {
+            document.querySelectorAll('.dropdown').forEach(function(dropdown) {
+                dropdown.style.display = 'none';
+            });
+        });
+
+                // Log-out confirmation function
+                function confirmLogout() {
+            // Prompt user with confirmation message
+            const userConfirmed = confirm("Do you want to log out?");
+            
+            if (userConfirmed) {
+                // If user clicks "OK", redirect to login page
+                window.location.href = 'login.html';  // Adjust the login page URL as needed
+            } else {
+                // If user clicks "Cancel", do nothing
+                console.log("User canceled the log-out.");
+            }
+        }
+
+        
+        // Enhanced JavaScript
+        document.addEventListener('DOMContentLoaded', () => {
+            // Dark Mode Toggle
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const body = document.body;
+            
+            darkModeToggle.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+                const icon = darkModeToggle.querySelector('i');
+                icon.classList.toggle('fa-moon');
+                icon.classList.toggle('fa-sun');
+                localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
+            });
+
+            // Mobile Menu Toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.navdiv')) {
+                    navLinks.classList.remove('active');
+                }
+            });
+
+            // Enhanced Filter Functionality
+            const filterItems = document.querySelector('.item-link');
+            const filterImages = document.querySelectorAll('.project-img');
+            
+            filterItems.addEventListener('click', (e) => {
+                if (e.target.classList.contains('item-links')) {
+                    document.querySelector('.menu-active').classList.remove('menu-active');
+                    e.target.classList.add('menu-active');
+                    
+                    const filterName = e.target.dataset.name;
+                    filterImages.forEach(img => {
+                        img.classList.add('hidden');
+                        if (filterName === 'all' || img.dataset.name === filterName) {
+                            setTimeout(() => img.classList.remove('hidden'), 50);
+                        }
+                    });
+                }
+            });
+        });
+
+        // Image Lazy Loading
+        document.addEventListener('DOMContentLoaded', function() {
+            const lazyImages = [].slice.call(document.querySelectorAll('img[loading="lazy"]'));
+            
+            if ('IntersectionObserver' in window) {
+                let lazyImageObserver = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            let lazyImage = entry.target;
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
+
+                lazyImages.forEach((lazyImage) => {
+                    lazyImageObserver.observe(lazyImage);
+                });
+            }
+        });
+    </script>
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Organizations - Monlimar</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../style/org.css">
+</head>
+<body>
+    <!-- Reuse Navigation from Reference -->
+    <nav class="navbar">
+        <div class="navdiv">
+          <div class="logo">
+            <h1>MONLIMAR DEVELOPMENT ACADEMY</h1>
+          </div>
+          <ul class="nav-links">
+            <li>
+              <a href="../dashboard.html"
+                ><i class="icon fas fa-home"></i> Home</a
+              >
+              <ul class="dropdown">
+                <li>
+                  <a href="../home/facilities.html"
+                    ><i class="fas fa-building"></i> Facilities</a
+                  >
+                </li>
+                <li>
+                  <a href="../home/staff.html"
+                    ><i class="fas fa-users"></i> School Personel</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li></li>
+            <li>
+              <a href="../../index.html"
+                ><i class="icon fas fa-calendar-alt"></i> Calendar</a
+              >
+            </li>
+            <li>
+              <a href="../org/org.html"
+                ><i class="icon fas fa-sitemap"></i> Organization</a
+              >
+            </li>
+            <li>
+              <a href="../profile/profile.html" class="active"
+                ><i class="icon fas fa-user"></i> Profile</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    <div class="org-container">
+        <div class="org-header">
+            <h1>Student Organizations</h1>
+            <p>Explore our vibrant student community groups</p>
+        </div>
+
+        <div class="org-tabs">
+            <div class="org-tab active" data-org="student-council">Student Council</div>
+            <div class="org-tab" data-org="stem-club">GEMS</div>
+            <div class="org-tab" data-org="ligths">MDA Lights</div>
+            <div class="org-tab" data-org="prestige">Prestige</div>
+        </div>
+
+        <!-- Student Council Content -->
+        <div class="org-content active" id="student-council">
+            <div class="org-card">
+                <div class="org-card-header">
+                    <i class="fas fa-users-crown org-icon"></i>
+                    <div>
+                        <h2>Student Council</h2>
+                        <p>"Empowering Student Leadership"</p>
+                    </div>
+                </div>
+
+                <div class="org-details">
+                    <div class="org-section">
+                        <h3>About Us</h3>
+                        <p>The official student governing body representing all Monlimar students. We organize school events and act as the voice of the student body.</p>
+                    </div>
+
+                    <div class="org-section">
+                        <h3>Key Information</h3>
+                        <p><strong>Advisor:</strong> Mrs. Sarah Johnson</p>
+                        <p><strong>Meetings:</strong> Every Wednesday 3:00 PM</p>
+                        <p><strong>Room:</strong> Student Center 201</p>
+                    </div>
+
+                    <div class="org-section">
+                        <h3>Executive Board</h3>
+                        <div class="officer-list">
+                            <div class="officer-card">
+                                <div class="officer-photo"></div>
+                                <div>
+                                    <h4>Maria Santos</h4>
+                                    <p>President</p>
+                                </div>
+                            </div>
+                            <!-- Add more officer cards -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STEM Club Content -->
+        <div class="org-content" id="stem-club">
+            <div class="org-card">
+                <div class="org-card-header">
+                    <i class="fas fa-atom org-icon"></i>
+                    <div>
+                        <h2>GEMS</h2>
+                        <p>"Exploring Science & Technology"</p>
+                    </div>
+                </div>
+
+                <div class="org-details">
+                    <div class="org-section">
+                        <h3>Upcoming Events</h3>
+                        <ul>
+                            <li>Robotics Workshop - March 15</li>
+                            <li>Science Fair 2024 - April 22-24</li>
+                        </ul>
+                    </div>
+
+                    <div class="org-section">
+                        <h3>Recent Achievements</h3>
+                        <ul>
+                            <li>1st Place Regional Science Olympiad</li>
+                            <li>National Robotics Competition Finalists</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="org-content" id="ligths">
+            <div class="org-card">
+                <div class="org-card-header">
+                    <i class="fas fa-code"></i>
+                    <div>
+                        <h2>MDA Ligths</h2>
+                        <p>"Strand based clud"</p>
+                    </div>
+                </div>
+
+                <div class="org-details">
+                    <div class="org-section">
+                        <h3>Upcoming Events</h3>
+                        <ul>
+                            <li>Coding 1v1 2025 - April 5-6</li>
+                        </ul>
+                    </div>
+
+                    <div class="org-section">
+                        <h3>Recent Achievements</h3>
+                        <ul>
+                            <li>Mobile Legend Tournament</li>
+                            <li>MDA Sinesaysay 2025</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="org-content" id="prestige">
+            <div class="org-card">
+                <div class="org-card-header">
+                    <i class="fas fa-newspaper"></i>
+                    <div>
+                        <h2>Prestige</h2>
+                        <p>"Strand based club"</p>
+                    </div>
+                </div>
+
+                <div class="org-details">
+                    <div class="org-section">
+                        <h3>Descriptiom</h3>
+                        <ul>
+                            <li>Prestige is a multidisciplinary media club uniting student journalists, photojournalists, and layout artists to craft polished stories through collaborative reporting, striking visuals, and innovative design, producing compelling narratives and professional publications.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <footer>
+        <div class="footer-container">
+          <div class="footer-about">
+            <div class="footer-logo">MONLIMAR</div>
+            <p>
+              Monlimar Development Academy is committed to providing quality
+              education that empowers students to achieve their full potential.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+  
+          <div class="footer-links">
+            <h3 class="footer-heading">Quick Links</h3>
+            <ul>
+              <li>
+                <a href="../dashboard.html"
+                  ><i class="fas fa-chevron-right"></i> Home</a
+                >
+              </li>
+              <li>
+                <a href="/index.html"
+                  ><i class="fas fa-chevron-right"></i> School Calendar</a
+                >
+              </li>
+              <li>
+                <a href="achievement.html"
+                  ><i class="fas fa-chevron-right"></i> Achievements</a
+                >
+              </li>
+              <li>
+                <a href="profile.html"
+                  ><i class="fas fa-chevron-right"></i> Student Profile</a
+                >
+              </li>
+              <li>
+                <a href="facilities.html"
+                  ><i class="fas fa-chevron-right"></i> School Facilities</a
+                >
+              </li>
+            </ul>
+          </div>
+  
+          <div class="footer-contact">
+            <h3 class="footer-heading">Contact Us</h3>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> 123 Education Ave., Learning
+              City
+            </p>
+            <p><i class="fas fa-phone-alt"></i> (02) 1234-5678</p>
+            <p><i class="fas fa-envelope"></i> info@monlimar.edu</p>
+            <p><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 5:00 PM</p>
+          </div>
+        </div>
+  
+        <div class="copyright">
+          <p>&copy; 2025 Monlimar Development Academy. All Rights Reserved.
+            <br> Created by: Gates&Page</p>
+        </div>
+      </footer>
+
+    <script>
+        // Tab Functionality
+        document.querySelectorAll('.org-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active classes
+                document.querySelectorAll('.org-tab, .org-content').forEach(el => {
+                    el.classList.remove('active');
+                });
+
+                // Add active classes
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.org).classList.add('active');
+            });
+        });
+
+        // Dark Mode Toggle (Reuse from Reference)
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+
+
+        // Create style element and add all CSS
+const styleElement = document.createElement('style');
+styleElement.textContent = `
+/* Pop-up Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-container {
+    background-color: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+.modal-header {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-title {
+    margin: 0;
+    color: #2c3e50;
+}
+
+.modal-close {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #7f8c8d;
+}
+
+.modal-close:hover {
+    color: #e74c3c;
+}
+
+.modal-body {
+    padding: 1rem;
+}
+
+.join-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.join-btn:hover {
+    background-color: #2980b9;
+}
+
+.join-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.join-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.join-form input, 
+.join-form textarea {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.join-form textarea {
+    min-height: 100px;
+}
+
+.join-form button[type="submit"] {
+    background-color: #2ecc71;
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.join-form button[type="submit"]:hover {
+    background-color: #27ae60;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Organization Tab Active State */
+.org-tab.active {
+    background-color: #3498db;
+    color: white;
+}
+`;
+document.head.appendChild(styleElement);
+
+// Function to create and show a pop-up modal
+function showPopup(title, content) {
+    // Create modal elements
+    const modalOverlay = document.createElement('div');
+    const modalContainer = document.createElement('div');
+    const modalHeader = document.createElement('div');
+    const modalTitle = document.createElement('h2');
+    const modalClose = document.createElement('span');
+    const modalBody = document.createElement('div');
+    
+    // Set attributes and content
+    modalOverlay.className = 'modal-overlay';
+    modalContainer.className = 'modal-container';
+    modalHeader.className = 'modal-header';
+    modalTitle.textContent = title;
+    modalClose.innerHTML = '&times;';
+    modalClose.className = 'modal-close';
+    modalBody.className = 'modal-body';
+    modalBody.innerHTML = content;
+    
+    // Build modal structure
+    modalHeader.appendChild(modalTitle);
+    modalHeader.appendChild(modalClose);
+    modalContainer.appendChild(modalHeader);
+    modalContainer.appendChild(modalBody);
+    modalOverlay.appendChild(modalContainer);
+    
+    // Add to document
+    document.body.appendChild(modalOverlay);
+    
+    // Close modal when clicking X or outside
+    modalClose.addEventListener('click', () => {
+        document.body.removeChild(modalOverlay);
+    });
+    
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) {
+            document.body.removeChild(modalOverlay);
+        }
+    });
+    
+    // Return the modal container for additional manipulation if needed
+    return modalContainer;
+}
+
+// Main functionality when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    // Show welcome popup (optional - can be removed)
+    showPopup(
+        'Welcome to School Organizations',
+        '<p>Explore our student organizations below. Click on each tab to learn more about different clubs and groups.</p>'
+    );
+    
+    // Tab switching functionality
+    const orgTabs = document.querySelectorAll('.org-tab');
+    const orgContents = document.querySelectorAll('.org-content');
+    
+    orgTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            // Remove active class from all tabs and contents
+            orgTabs.forEach(t => t.classList.remove('active'));
+            orgContents.forEach(c => c.classList.remove('active'));
+            
+            // Add active class to clicked tab and corresponding content
+            this.classList.add('active');
+            const targetId = this.getAttribute('data-org');
+            document.getElementById(targetId).classList.add('active');
+            
+            // Show organization info popup
+            const orgName = this.textContent.trim();
+            let orgContent = '';
+            
+            // Custom content for each organization
+            switch(orgName) {
+                case 'Student Council':
+                    orgContent = `
+                        <p>The official student governing body representing all Monlimar students.</p>
+                        <p><strong>Advisor:</strong> Mrs. Sarah Johnson</p>
+                        <p><strong>Meetings:</strong> Every Wednesday 3:00 PM</p>
+                        <button class="join-btn">Join This Organization</button>
+                    `;
+                    break;
+                case 'GEMS':
+                    orgContent = `
+                        <p>Science, Technology, Engineering, and Math club for curious minds.</p>
+                        <p><strong>Upcoming Event:</strong> Robotics Workshop - March 15</p>
+                        <button class="join-btn">Join This Organization</button>
+                    `;
+                    break;
+                case 'MDA Lights':
+                    orgContent = `
+                        <p>Our strand-based technology and gaming club.</p>
+                        <p><strong>Next Tournament:</strong> April 5-6</p>
+                        <button class="join-btn">Join This Organization</button>
+                    `;
+                    break;
+                case 'Prestige':
+                    orgContent = `
+                        <p>Multidisciplinary media club for journalists and creatives.</p>
+                        <p><strong>Current Project:</strong> School Yearbook 2025</p>
+                        <button class="join-btn">Join This Organization</button>
+                    `;
+                    break;
+            }
+            
+            const modal = showPopup(orgName, orgContent);
+            
+            // Add event listener to join button in the modal
+            modal.querySelector('.join-btn')?.addEventListener('click', function() {
+                showPopup(
+                    'Join ' + orgName,
+                    `
+                    <form class="join-form">
+                        <label>Full Name: <input type="text" required></label>
+                        <label>Grade Level: 
+                            <select required>
+                                <option value="">Select Grade</option>
+                                <option value="7">Grade 7</option>
+                                <option value="8">Grade 8</option>
+                                <option value="9">Grade 9</option>
+                                <option value="10">Grade 10</option>
+                                <option value="11">Grade 11</option>
+                                <option value="12">Grade 12</option>
+                            </select>
+                        </label>
+                        <label>Email: <input type="email" required></label>
+                        <label>Why do you want to join?
+                        <textarea required></textarea></label>
+                        <button type="submit">Submit Application</button>
+                    </form>
+                    `
+                );
+                
+                // Handle form submission
+                document.querySelector('.join-form')?.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Thank you for your application to ' + orgName + '! We will contact you soon.');
+                    document.querySelector('.modal-overlay')?.remove();
+                });
+            });
+        });
+    });
+    
+    // Activate the first tab by default
+    if (orgTabs.length > 0) {
+        orgTabs[0].click();
+    }
+});
+    </script>
+</body>
+</html>
