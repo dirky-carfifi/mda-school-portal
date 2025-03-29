@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/04125a405c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="final1.css">
+    <title>Teacher's Timetable</title>
+    <style>
+        /* CSS Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Main Content Styles */
+        main {
+            flex: 1;
+            margin-left: 250px;
+            padding: 30px;
+            min-width: 0; /* Prevent flex overflow */
+        }
+
+        /* Profile Header */
+        #profile {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        #profile h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        #profile h4 {
+            color: #666;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        /* Timetable Styles */
+        .timetable-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            overflow-x: auto;
+        }
+
+        h1.timetable-title {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        h2.schedule-title {
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        table.timetable {
+            width: 100%;
+            min-width: 800px; /* Ensure table has minimum width */
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table.timetable th, 
+        table.timetable td {
+            padding: 12px 15px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+        }
+
+        table.timetable th {
+            background-color: #ff69b4;
+            color: white;
+            font-weight: 500;
+            position: sticky;
+            top: 0;
+        }
+
+        table.timetable tr:nth-child(even) {
+            background-color: #fff9fb;
+        }
+
+        table.timetable tr:hover {
+            background-color: #ffe6ee;
+        }
+
+        table.timetable .time-cell {
+            font-weight: 500;
+            color: #555;
+            white-space: nowrap;
+        }
+
+        table.timetable .class-cell {
+            color: #333;
+        }
+
+        table.timetable .break-cell {
+            background-color: #f0f0f0;
+            color: #888;
+            font-style: italic;
+        }
+
+        table.timetable .vacant-cell {
+            color: #999;
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #ff69b4;
+            color: white;
+            margin-left: 250px;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .side-menu {
+                width: 90px;
+            }
+            
+            .side-menu .text {
+                display: none;
+            }
+            
+            main, footer {
+                margin-left: 90px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            table.timetable th, 
+            table.timetable td {
+                padding: 8px 10px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="menu-toggle" id="menuToggle">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <div class="side-menu" id="sideMenu">
+        <ul>
+            <li>
+                <a href="#" class="logo">
+                    <span class="icon"><i class="fa-solid fa-code"></i></span>
+                </a>
+            </li>
+            <li>
+                <a href="teacher.html">
+                    <span class="icon"><i class="fa-solid fa-chart-line"><span style="color: #FF69B4; font-weight: 100;"> Dashboard</span></i></span>
+                </a>
+            </li>
+            <li>
+                <a href="student.html">
+                    <span class="icon"><i class="fa-solid fa-users"><span style="color: #FF69B4; font-weight: 100;"> Student</span></i></span>
+            </li>
+            <li>
+                <a href="school-work.html">
+                    <span class="icon"><i class="fa-solid fa-file"><span style="color: #FF69B4; font-weight: 100;"> School Works</span></i></span>
+                </a>
+            </li>
+            <li>
+                <a href="calendar.html">
+                    <span class="icon"><i class="fa-solid fa-calendar"><span style="color: #FF69B4; font-weight: 100;"> Calendar</span></i></span>
+                </a>
+            </li>
+            <li>
+                <a href="event.html">
+                    <span class="icon"><i class="fa-solid fa-star"><span style="color: #FF69B4; font-weight: 100;"> Events</span></i></span>
+                </a>
+            </li>
+            <li>
+                <a href="table.html">
+                    <span class="icon"><i class="fa-solid fa-clock"><span style="color: #FF69B4; font-weight: 100;"> Time Table</span></i></span>
+                </a>
+            </li>
+            <li>
+                <button class="logout-btn" onclick="confirmLogout()">
+                  <i class="icon fas fa-sign-out-alt"></i> Log Out
+                </button>
+              </li>
+        </ul>
+    </div>
+    
+    <main>
+        <section id="profile">
+            <h2>Welcome, Maam Sheeva May Rol</h2>
+            <h4>Department: Junior High</h4>
+        </section>
+        
+        <div class="timetable-container">
+            <h1 class="timetable-title">Your Timetable</h1>
+            <h2 class="schedule-title">Junior Highschool and Senior Highschool Schedule</h2>
+            
+            <table class="timetable">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Morning Sessions -->
+                    <tr>
+                        <td class="time-cell">7:00 - 7:50</td>
+                        <td class="class-cell">Aquarius</td>
+                        <td class="vacant-cell">-</td>
+                        <td class="vacant-cell">-</td>
+                        <td class="class-cell">Aquarius</td>
+                        <td rowspan="6" class="vacant-cell">Vacant</td>
+                    </tr>
+                    <tr>
+                        <td class="time-cell">7:50 - 8:40</td>
+                        <td class="class-cell">Scorpius</td>
+                        <td class="vacant-cell">-</td>
+                        <td class="vacant-cell">-</td>
+                        <td class="class-cell">Scorpius</td>
+                    </tr>
+                    <tr>
+                        <td class="time-cell">8:40 - 9:10</td>
+                        <td class="break-cell">Breaktime</td>
+                        <td class="vacant-cell">-</td>
+                        <td class="vacant-cell">-</td>
+                        <td class="break-cell">Breaktime</td>
+                    </tr>
+                    <tr>
+                        <td class="time-cell">9:10 - 10:00</td>
+                        <td class="class-cell">Aquila</td>
+                        <td class="vacant-cell">-</td>
+                        <td class="vacant-cell">-</td>
+                        <td class="class-cell">Aquila</td>
+                    </tr>
+                    <tr>
+                        <td class="time-cell">10:00 - 10:50</td>
+                        <td class="class-cell">Pegasus</td>
+                        <td class="vacant-cell">-</td>
+                        <td class="vacant-cell">-</td>
+                        <td class="class-cell">Pegasus</td>
+                    </tr>
+                    <tr>
+                        <td class="time-cell">10:50 - 11:30</td>
+                        <td class="class-cell">Phoenix</td>
+                        <td class="class-cell">Asther</td>
+                        <td class="class-cell">Asther</td>
+                        <td class="class-cell">Phoenix</td>
+                    </tr>
+                    
+                    <!-- Lunch Break -->
+                    <tr>
+                        <td class="time-cell">11:30 - 12:10</td>
+                        <td class="break-cell">Lunch</td>
+                        <td class="break-cell">Breaktime</td>
+                        <td class="vacant-cell">-</td>
+                        <td class="break-cell">Lunch</td>
+                        <td class="vacant-cell">-</td>
+                    </tr>
+                    
+                    <!-- Afternoon Sessions -->
+                    <tr>
+                        <td class="time-cell">12:10 - 1:00</td>
+                        <td class="vacant-cell">Vacant</td>
+                        <td class="class-cell">Heather</td>
+                        <td class="class-cell">Asther</td>
+                        <td class="vacant-cell">Vacant</td>
+                        <td class="vacant-cell">-</td>
+                    </tr>
+                    <tr>
+                        <td class="time-cell">1:00 - 1:50</td>
+                        <td class="vacant-cell">Vacant</td>
+                        <td class="class-cell">Anthurium</td>
+                        <td class="class-cell">Heather</td>
+                        <td class="vacant-cell">Vacant</td>
+                        <td class="vacant-cell">-</td>
+                    </tr>
+                    <tr>
+                        <td class="time-cell">1:50 - 2:40</td>
+                        <td class="vacant-cell">Vacant</td>
+                        <td class="vacant-cell">Vacant</td>
+                        <td class="class-cell">Anthurium</td>
+                        <td class="vacant-cell">Vacant</td>
+                        <td class="vacant-cell">-</td>
+                    </tr>
+                    <tr>
+                        <td class="time-cell">2:40 - 2:50</td>
+                        <td class="vacant-cell">Vacant</td>
+                        <td class="vacant-cell">Vacant</td>
+                        <td class="vacant-cell">Vacant</td>
+                        <td class="vacant-cell">Vacant</td>
+                        <td class="vacant-cell">-</td>
+                    </tr>
+                    
+                    <!-- Evening Sessions -->
+                    <tr>
+                        <td class="time-cell">2:50 - 4:30</td>
+                        <td class="class-cell">Gates</td>
+                        <td class="class-cell">Gates</td>
+                        <td class="vacant-cell">Vacant</td>
+                        <td class="class-cell">Page</td>
+                        <td class="class-cell">Page</td>
+                    </tr>
+                    <tr>
+                        <td class="time-cell">4:30 - 5:10</td>
+                        <td class="break-cell">Breaktime</td>
+                        <td class="break-cell">Breaktime</td>
+                        <td class="vacant-cell">Vacant</td>
+                        <td class="break-cell">Breaktime</td>
+                        <td class="break-cell">Breaktime</td>
+                    </tr>
+                    <tr>
+                        <td class="time-cell">5:10 - 6:50</td>
+                        <td class="class-cell">Gates</td>
+                        <td class="class-cell">Gates</td>
+                        <td class="vacant-cell">Vacant</td>
+                        <td class="class-cell">Page</td>
+                        <td class="class-cell">Page</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+       const menuToggle = document.getElementById('menuToggle');
+       const sideMenu = document.getElementById('sideMenu');
+   
+       menuToggle.addEventListener('click', function () {
+           sideMenu.classList.toggle('open');
+       });
+   });
+   
+   function confirmLogout() {
+       if (confirm("Are you sure you want to log out?")) {
+           window.location.href = "../logout.html"; // Change this to your actual logout route
+           showNotification("You have been logged out.");
+       }
+   }
+   
+   // Optional: Notification function
+   function showNotification(message) {
+       alert(message);
+   }
+   
+       </script>
+</body>
+</html>

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>March and April Events</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #edeaea;
+            overflow-x: hidden;
+        }
+
+        /* Side Menu Styles */
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 90px;
+            z-index: 999;
+            background: #ffe6ee;
+            overflow-x: hidden;
+            padding-top: 10px;
+            transition: 0.6s ease !important;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .side-menu.expanded {
+            width: 250px !important;
+        }
+
+        .side-menu ul {
+            position: relative;
+            height: 97vh;
+        }
+
+        .side-menu ul li {
+            list-style: none;
+            margin: 5px 0;
+        }
+
+        .side-menu ul li:hover {
+            background: #FFB6C1;
+            transition: 0.3s ease;
+        }
+
+        .side-menu ul li a {
+            position: relative;
+            display: flex;
+            white-space: nowrap;
+            text-decoration: none;
+            color: #FF69B4;
+        }
+
+        .side-menu ul li .logo {
+            margin-bottom: 80px;
+        }
+
+        .side-menu ul li .logo .text,
+        .side-menu ul li a .text {
+            position: relative;
+            display: flex;
+            align-items: center;
+            height: 60px;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.2px;
+            font-weight: 500;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .side-menu.expanded ul li .logo .text,
+        .side-menu.expanded ul li a .text {
+            opacity: 1;
+        }
+
+        .side-menu ul li .logo .text {
+            color: #FF69B4;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .side-menu ul li a .text {
+            color: black;
+        }
+
+        .side-menu ul li:last-child {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .side-menu ul li a .icon {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 75px;
+            height: 60px;
+            font-size: 22px;
+            color: #FF69B4;
+        }
+
+        /* Menu Toggle Button */
+        .menu-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: #FF69B4;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            background: #FF1493;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            position: relative;
+            margin-left: 90px;
+            min-height: 100vh;
+            padding: 20px;
+            transition: margin-left 0.6s ease !important;
+        }
+
+        .main-content.expanded {
+            margin-left: 250px !important;
+        }
+
+        /* Header Styles */
+        header {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #a76097;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #777;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #333;
+            margin: 30px 0 15px 0;
+            padding-left: 10px;
+        }
+
+        /* Table Styles */
+        .event-table {
+            background-color: #ffffff;
+            width: 1000px;
+            margin-bottom: 40px;
+            border-collapse: collapse;
+            box-shadow: 0px 0px 5px #696969;
+            border-radius: 5px;
+
+        }
+
+        .event-table th, 
+        .event-table td {
+            padding: 20px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .event-table th {
+            background-color: #a76097;
+            color: #fff;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        .event-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .event-table tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .date-cell {
+            background-color: #f5f5f5;
+            font-weight: bold;
+            white-space: nowrap;
+            width: 120px;
+        }
+
+        .event-description {
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
+
+        .event-details {
+            color: #696969;
+            margin-top: 10px;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <button class="menu-toggle" id="menuToggle">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <div class="side-menu" id="sideMenu">
+        <ul>
+            <li>
+                <a href="#" class="logo">
+                    <span class="icon"><i class="fa-solid fa-code"></i></span>
+                </a>
+            </li>
+            <li>
+                <a href="teacher.html">
+                    <span class="icon"><i class="fa-solid fa-chart-line"><span style="color: #FF69B4; font-weight: 100;"> Dashboard</span></i></span>
+                </a>
+            </li>
+            <li>
+                <a href="student.html">
+                    <span class="icon"><i class="fa-solid fa-users"><span style="color: #FF69B4; font-weight: 100;"> Student</span></i></span>
+            </li>
+            <li>
+                <a href="school-work.html">
+                    <span class="icon"><i class="fa-solid fa-file"><span style="color: #FF69B4; font-weight: 100;"> School Works</span></i></span>
+                </a>
+            </li>
+            <li>
+                <a href="calendar.html">
+                    <span class="icon"><i class="fa-solid fa-calendar"><span style="color: #FF69B4; font-weight: 100;"> Calendar</span></i></span>
+                </a>
+            </li>
+            <li>
+                <a href="event.html">
+                    <span class="icon"><i class="fa-solid fa-star"><span style="color: #FF69B4; font-weight: 100;"> Events</span></i></span>
+                </a>
+            </li>
+            <li>
+                <a href="table.html">
+                    <span class="icon"><i class="fa-solid fa-clock"><span style="color: #FF69B4; font-weight: 100;"> Time Table</span></i></span>
+                </a>
+            </li>
+            <li>
+                <button class="logout-btn" onclick="confirmLogout()">
+                  <i class="icon fas fa-sign-out-alt"></i> Log Out
+                </button>
+              </li>
+        </ul>
+    </div>
+    <div class="main-content" id="mainContent">
+        <header>
+            <h1>Upcoming Events</h1>
+            <p>Check out the events happening in March and April!</p>
+        </header>
+
+        <!-- March Events Table -->
+        <h2>March Events</h2>
+        <table class="event-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Event</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="date-cell">03-07</td>
+                    <td class="event-description">
+                        Submission of Requirements for Outstanding Performance in Specific Discipline Nominees
+                        <div class="event-details">invites individuals and teams to submit their work for evaluation, recognizing exceptional achievements across various fields. Submissions will be reviewed for their impact, innovation, and excellence, with the best receiving recognition and awards.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="date-cell">03-07</td>
+                    <td class="event-description">4th Quarterly Unit Assessment
+                        <div class="event-details">Evaluation of students' performance at the end of the 4th quarter. It aims to measure their knowledge and skills gained throughout the unit, helping to track academic performance and readiness for the next stage.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="date-cell">14</td>
+                    <td class="event-description">Culminating Activity for English Month Celebration (Musical Play)
+                        <div class="event-details">A culminating event for English Month featuring a musical play.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="date-cell">10-14</td>
+                    <td class="event-description">Research Colloquium 2025
+                        <div class="event-details">A conference or seminar for presenting research findings.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="date-cell">21</td>
+                    <td class="event-description">MDA Cup Season 3 - Awarding Ceremony
+                        <div class="event-details">Awards ceremony for the MDA Cup Season 3 competition.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="date-cell">26-28</td>
+                    <td class="event-description">4th Quarterly Summative Assessment
+                        <div class="event-details"> A final evaluation of students' understanding and performance for the quarter, assessing their grasp of the subjects covered throughout the term.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="date-cell">28</td>
+                    <td class="event-description">End of Academic Quarter 4
+                        <div class="event-details">Last day of the 4th academic quarter.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="date-cell">31</td>
+                    <td class="event-description">Final Deliberation of Honors
+                        <div class="event-details">Final discussion and decision on student honors and awards.</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- April Events Table -->
+        <h2>April Events</h2>
+        <table class="event-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Event</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="date-cell">03</td>
+                    <td class="event-description">Baccalaureate Mass
+                        <div class="event-details">A religious ceremony held for graduating students to bless and give thanks for their academic journey before their graduation day.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="date-cell">04</td>
+                    <td class="event-description">CAT Graduation
+                        <div class="event-details"> The culmination of the Cadet Activities Training (CAT) program, where students are recognized for their achievements and skills developed through military training.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="date-cell">07-19</td>
+                    <td class="event-description">19th Recognition Day 2025 and Awarding of Teachers
+                        <div class="event-details">A special event to honor students for their academic and extracurricular achievements and to recognize the dedication and hard work of teachers.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="date-cell">09</td>
+                    <td class="event-description">Day of Valor; Founder's Day
+                        <div class="event-details">A dual commemoration of the bravery of Filipino soldiers in the Battle of Bataan (Day of Valor) and the founding of the school (Founder's Day)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="date-cell">11</td>
+                    <td class="event-description">End-of-School Year Rites
+                        <ul>
+                        <li>10th Moving-1Up Ceremony and 16th Graduation Day (Kindergarten & Elementary);</li>
+                        <li>9th Completion Rite (Grade 10 JHS);</li>
+                        <li>8th Commencement Exercise (Grade 12 SHS)</li>
+                        </ul>
+                        <div class="event-details">A ceremony marking the end of the school year, where students are recognized for their accomplishments and prepare to move on to the next academic phase.
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="date-cell">15</td>
+                    <td class="event-description">End of School Year
+                        <div class="event-details">The official closing date of the academic year, marking the end of classes and school-related activities.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="date-cell">16</td>
+                    <td class="event-description">Start of Enrollment for SY. 2025-2026
+                        <div class="event-details">The beginning of the enrollment period for the next academic year, where students register for classes.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="date-cell">17</td>
+                    <td class="event-description">Maundy Thursday
+                        <div class="event-details">A Christian observance during Holy Week, commemorating the Last Supper of Jesus Christ with his disciples.</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="date-cell">18</td>
+                    <td class="event-description">Good Friday
+                        <div class="event-details">A solemn Christian holiday that commemorates the crucifixion and death of Jesus Christ, observed with reflection and remembrance.</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+       const menuToggle = document.getElementById('menuToggle');
+       const sideMenu = document.getElementById('sideMenu');
+   
+       menuToggle.addEventListener('click', function () {
+           sideMenu.classList.toggle('open');
+       });
+   });
+   
+   function confirmLogout() {
+       if (confirm("Are you sure you want to log out?")) {
+           window.location.href = "../logout.html"; // Change this to your actual logout route
+           showNotification("You have been logged out.");
+       }
+   }
+   
+   // Optional: Notification function
+   function showNotification(message) {
+       alert(message);
+   }
+   
+       </script>
+</body>
+</html>
