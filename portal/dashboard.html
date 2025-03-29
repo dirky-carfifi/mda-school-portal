@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.1/main.min.css"/>
+    <link rel="stylesheet" href="style/dshbrd.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Monlimar School Portal</title>
+    <style>
+      
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navdiv">
+        <img src="img/logo.jpg" />
+        <div class="logo">
+          <h1>MONLIMAR DEVELOPMENT ACADEMY INC.</h1>
+        </div>
+        <ul class="nav-links">
+          <li>
+            <a href="dashboard.html"><i class="icon fas fa-home"></i> Home</a>
+            <ul class="dropdown">
+              <li>
+                <a href="home/facilities.html"
+                  ><i class="fas fa-building"></i> Facilities</a
+                >
+              </li>
+              <li>
+                <a href="home/staff.html"
+                  ><i class="fas fa-users"></i> Admin Staff</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="../index.html"
+              ><i class="icon fas fa-calendar-alt"></i> Calendar</a
+            >
+          </li>
+          <li>
+            <a href="org/org.html"
+              ><i class="icon fas fa-sitemap"></i> Organization</a
+            >
+          </li>
+          <li>
+            <a href="../admin-login.php"
+              ><i class="icon fas fa-tachometer-alt"></i> Admin Login</a
+            >
+          </li>
+          <li>
+            <a href="profile/profile.html" class="active"
+              ><i class="icon fas fa-user"></i> Profile</a
+            >
+          </li>
+          <li>
+            <button class="logout-btn" onclick="confirmLogout()">
+              <i class="icon fas fa-sign-out-alt"></i> Log Out
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <ul id="tabs">
+      <li>
+        <a href="#" name="tab1"><i class="icon fas fa-book"></i>Philosophy</a>
+      </li>
+      <li>
+        <a href="#" name="tab2"><i class="icon fas fa-landmark"></i>Mission</a>
+      </li>
+      <li>
+        <a href="#" name="tab3"><i class="icon fas fa-eye"></i>Vision</a>
+      </li>
+      <li>
+        <a href="#" name="tab4"><i class="icon fas fa-bullseye"></i>Goals And Objectives</a>
+      </li>
+    </ul>
+
+    <div id="content">
+      <div id="tab1">
+        <div class="card">
+          <h2>School Philosophy</h2>
+          <p>
+            Monlimar Development Academy is a non-sectarian educational
+            institution committed to providing an inclusive, high-quality
+            learning environment that embraces diversity in all forms. The
+            school fosters academic excellence and holistic development through
+            a supportive and conducive atmosphere, aiming to develop resilient
+            learners with the necessary skills, competencies, a strong
+            nationalistic spirit, and strong moral and ethical values. The
+            school also strives to empower an empathetic, highly competent, and
+            adaptable teaching workforce to meet the evolving needs of
+            Monlimarian learners.
+          </p>
+        </div>
+      </div>
+      <div id="tab2">
+        <div class="card">
+          <h2>School Mission</h2>
+          <p>
+            Monlimar Development Academy aims to create a dynamic learning
+            environment that equips learners with 21st century skills, fostering
+            their growth into competent and responsible citizens who make
+            meaningful contributions to society, offering programs that inspire
+            them to reach their full potentials.
+          </p>
+        </div>
+      </div>
+      <div id="tab3">
+        <div class="card">
+          <h2>School Vision</h2>
+          <p>
+            Monlimar Development Academy aims to be an exemplary educational
+            institution where learners develop resiliency, respect for all,
+            achieve global competitiveness, and contribute positively to society
+            and the nation.
+          </p>
+        </div>
+      </div>
+      <div id="tab4">
+        <div class="card">
+          <h2>Goals and Objectives</h2>
+          <p>
+            At Monlimar Development Academy, we are committed to fostering a
+            holistic learning environment where learners can grow academically,
+            socially, and personally. Our goals and objectives are designed to
+            cultivate well-rounded individuals who are prepared to face the
+            challenges of the modern world.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- History Section -->
+    <div class="history-section">
+      <h2>Our School History</h2>
+      <p>
+        Monlimar Development Academy has a rich history of providing quality
+        education to students in our community. Founded with a vision to create
+        a nurturing environment that fosters both academic excellence and
+        personal growth, our school has grown from humble beginnings to become a
+        leading educational institution.
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <div class="timeline-year">1990</div>
+            <p>
+              Monlimar Development Academy was founded by a group of educators
+              with a vision to provide quality education to the local community.
+              The school started with just 50 students and 5 teachers.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <div class="timeline-year">1995</div>
+            <p>
+              The school expanded its facilities to accommodate growing
+              enrollment, adding new classrooms and a library. The first batch
+              of high school graduates completed their studies.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <div class="timeline-year">2002</div>
+            <p>
+              Monlimar Development Academy received accreditation from the
+              Department of Education, recognizing the school's commitment to
+              quality education and innovative teaching methods.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <div class="timeline-year">2010</div>
+            <p>
+              The school celebrated its 20th anniversary with the opening of a
+              new science laboratory and computer center, marking a significant
+              step forward in STEM education.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <div class="timeline-year">2018</div>
+            <p>
+              Monlimar Development Academy launched its international exchange
+              program, partnering with schools in three different countries to
+              provide global learning opportunities.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <div class="timeline-year">2023</div>
+            <p>
+              The school completed a major renovation project, adding
+              state-of-the-art facilities including a performing arts center and
+              expanded sports complex.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        Today, Monlimar Development Academy continues to build on its legacy of
+        excellence, preparing students to meet the challenges of the 21st
+        century with confidence, creativity, and compassion.
+      </p>
+    </div>
+
+    <div class="faq-section">
+      <h2>FAQ</h2>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(1)">
+          Q: How do I update my profile?
+        </div>
+        <div class="faq-answer" id="faqAnswer1">
+          A: Go to the Profile section and fill out the form.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(2)">
+          Q: How do I contact the school?
+        </div>
+        <div class="faq-answer" id="faqAnswer2">
+          A: Use the Contact section or call the school office.
+        </div>
+      </div>
+    </div>
+
+    <!-- Announcements Section -->
+    <div class="announcements">
+      <h2>Announcements</h2>
+      <p>1. School reopening on January 10th, 2024.</p>
+      <p>2. Parent-teacher meeting scheduled for January 15th, 2024.</p>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" onclick="scrollToTop()">Back to Top</button>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+      Profile updated successfully!
+    </div>
+
+    <!-- Loading Spinner -->
+    <div class="loading-spinner" id="loadingSpinner">
+      <i class="fas fa-spinner fa-spin"></i> Loading...
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-about">
+          <div class="footer-logo">MONLIMAR</div>
+          <p>
+            Monlimar Development Academy is committed to providing quality
+            education that empowers students to achieve their full potential.
+          </p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul>
+            <li>
+              <a href="dashboard.html"
+                ><i class="fas fa-chevron-right"></i> Home</a
+              >
+            </li>
+            <li>
+              <a href="index.html"
+                ><i class="fas fa-chevron-right"></i> School Calendar</a
+              >
+            </li>
+            <li>
+              <a href="achievement.html"
+                ><i class="fas fa-chevron-right"></i> Achievements</a
+              >
+            </li>
+            <li>
+              <a href="profile/profile.html"
+                ><i class="fas fa-chevron-right"></i> Student Profile</a
+              >
+            </li>
+            <li>
+              <a href="facilities.html"
+                ><i class="fas fa-chevron-right"></i> School Facilities</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h3 class="footer-heading">Contact Us</h3>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> 123 Education Ave., Learning
+            City
+          </p>
+          <p><i class="fas fa-phone-alt"></i> (02) 1234-5678</p>
+          <p><i class="fas fa-envelope"></i> info@monlimar.edu</p>
+          <p><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 5:00 PM</p>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>&copy; 2025 Monlimar Development Academy. All Rights Reserved.
+          <br> Created by: Gates&Page</p>
+      </div>
+    </footer>
+
+    <!-- Dark Mode Toggle Button -->
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">
+      <i class="icon fas fa-moon"></i> Toggle Dark Mode
+    </button>
+
+    <script>
+      $(document).ready(function () {
+        $("#content").find("[id^='tab']").hide(); // Hide all content
+        $("#tabs li:first").attr("id", "current"); // Activate the first tab
+        $("#content #tab1").fadeIn(); // Show first tab's content
+
+        $("#tabs a").click(function (e) {
+          e.preventDefault();
+          if ($(this).closest("li").attr("id") == "current") {
+            //detection for current tab
+            return;
+          } else {
+            $("#content").find("[id^='tab']").hide(); // Hide all content
+            $("#tabs li").attr("id", ""); //Reset id's
+            $(this).parent().attr("id", "current"); // Activate this
+            $("#" + $(this).attr("name")).fadeIn(); // Show content for the current tab
+          }
+        });
+
+        // Show/hide back-to-top button based on scroll position
+        $(window).scroll(function () {
+          if ($(this).scrollTop() > 100) {
+            $(".back-to-top").fadeIn();
+          } else {
+            $(".back-to-top").fadeOut();
+          }
+        });
+      });
+
+      function confirmLogout() {
+        if (confirm("Are you sure you want to log out?")) {
+          // Redirect to logout page or perform logout action
+          window.location.href = "../portal/logout.html";
+          showNotification("You have been logged out.");
+        }
+      }
+
+      function showNotification(message) {
+        const notification = document.getElementById("notification");
+        notification.textContent = message;
+        notification.style.display = "block";
+        setTimeout(() => {
+          notification.style.display = "none";
+        }, 3000);
+      }
+
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+      }
+
+      function searchContent() {
+        const searchTerm = document
+          .getElementById("searchInput")
+          .value.toLowerCase();
+        const cards = document.querySelectorAll(".card");
+        let found = false;
+
+        cards.forEach((card) => {
+          const text = card.textContent.toLowerCase();
+          if (text.includes(searchTerm)) {
+            card.style.display = "block";
+            found = true;
+          } else {
+            card.style.display = "none";
+          }
+        });
+
+        if (!found) {
+          showNotification("No results found.");
+        }
+      }
+
+      function clearSearch() {
+        document.getElementById("searchInput").value = "";
+        const cards = document.querySelectorAll(".card");
+        cards.forEach((card) => {
+          card.style.display = "block";
+        });
+      }
+
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
+
+      function toggleFAQ(id) {
+        const answer = document.getElementById("faqAnswer" + id);
+        answer.style.display =
+          answer.style.display === "block" ? "none" : "block";
+      }
+    </script>
+  </body>
+</html>

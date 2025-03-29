@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        :root {
+            --primary-color: #FF8DA1;
+            --secondary-color: #ffd6e0;
+            --accent-color: #c96464;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(rgba(255, 141, 161, 0.1), rgba(255, 214, 224, 0.1)),
+                        url(images/logo.jpg) no-repeat center/contain;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            width: 380px;
+            backdrop-filter: blur(10px);
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            font-size: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-group {
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        input[type="text"], 
+        input[type="password"] {
+            width: 100%;
+            padding: 12px 20px;
+            border: 2px solid var(--secondary-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 8px rgba(255, 141, 161, 0.2);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(201, 100, 100, 0.3);
+        }
+
+        .error-message {
+            color: #ff4444;
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .fading-text {
+            position: absolute;
+            bottom: 10%;
+            width: 100%;
+            text-align: center;
+            font-size: 1.5rem;
+            color: rgba(0, 0, 0, 0.7);
+            animation: fadeInOut 6s infinite;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                width: 90%;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Welcome Back</h2>
+        <form id="loginForm" onsubmit="return validateLogin(event)">
+            <div class="input-group">
+                <input type="text" id="username" placeholder="Username" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="login-btn">Sign In</button>
+            <p class="error-message" id="error-message">Incorrect credentials</p>
+        </form>
+    </div>
+
+    <div class="fading-text">Competence • Resilience • Respect • Service</div>
+
+    <script>
+        const users = {        
+            "dirk": "456",
+            "teacher": "123"       
+        };
+
+        const redirects = {
+            "456": "dashboard.html",
+            "123": "tc/teacher.html"
+        };
+
+        function validateLogin(event) {
+            event.preventDefault();
+            const errorMessage = document.getElementById("error-message");
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (users[username] && users[username] === password) {
+                if (redirects[password]) {
+                    window.location.href = redirects[password];
+                } else {
+                    errorMessage.textContent = "No dashboard found";
+                    errorMessage.style.opacity = "1";
+                }
+            } else {
+                errorMessage.style.opacity = "1";
+                setTimeout(() => {
+                    errorMessage.style.opacity = "0";
+                }, 2000);
+            }
+        }
+    </script>
+</body>
+</html>
