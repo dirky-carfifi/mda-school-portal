@@ -1,0 +1,272 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/04125a405c.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="final1.css">
+        <title>Teacher's Panel</title>
+    </head> 
+    
+  </head>
+    <body> 
+        <button class="menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="side-menu" id="sideMenu">
+            <ul>
+                <li>
+                    <a href="#" class="logo">
+                        <span class="icon"><i class="fa-solid fa-code"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="teacher.html">
+                        <span class="icon"><i class="fa-solid fa-chart-line"><span style="color: #FF69B4; font-weight: 100;"> Dashboard</span></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="student.html">
+                        <span class="icon"><i class="fa-solid fa-users"><span style="color: #FF69B4; font-weight: 100;"> Student</span></i></span>
+                </li>
+                <li>
+                    <a href="school-work.html">
+                        <span class="icon"><i class="fa-solid fa-file"><span style="color: #FF69B4; font-weight: 100;"> School Works</span></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="calendar.html">
+                        <span class="icon"><i class="fa-solid fa-calendar"><span style="color: #FF69B4; font-weight: 100;"> Calendar</span></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="event.html">
+                        <span class="icon"><i class="fa-solid fa-star"><span style="color: #FF69B4; font-weight: 100;"> Events</span></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="table.html">
+                        <span class="icon"><i class="fa-solid fa-clock"><span style="color: #FF69B4; font-weight: 100;"> Time Table</span></i></span>
+                    </a>
+                </li>
+                <li>
+                    <button class="logout-btn" onclick="confirmLogout()">
+                      <i class="icon fas fa-sign-out-alt"></i> Log Out
+                    </button>
+                  </li>
+            </ul>
+        </div>
+    
+    <div class="calendar">
+        <div class="title1">Calendar</div>
+      <div class="month">
+        <button id="but">
+            <i class="fa-solid fa-arrow-right"></i> <!-- Right Arrow -->
+            <br>Next</button>
+        <button id="but2">
+            <i class="fa-solid fa-arrow-left"></i>  <!-- Left Arrow -->
+            <br>Previous</button>
+        <strong>MARCH</strong>
+        <select id="yearSelect"></select>
+      </div>
+      <table>
+        <tr>
+          <th>Sun</th>
+          <th>Mon</th>
+          <th>Tues</th>
+          <th>Wed</th>
+          <th>Thu</th>
+          <th>Fri</th>
+          <th>Sat</th>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>7</td>
+          <td>8</td>
+          <td>9</td>
+          <td>10</td>
+          <td>11</td>
+          <td>12</td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td>14</td>
+          <td>15</td>
+          <td>16</td>
+          <td>17</td>
+          <td>18</td>
+          <td>19</td>
+        </tr>
+        <tr>
+          <td>20</td>
+          <td>21</td>
+          <td>22</td>
+          <td>23</td>
+          <td>24</td>
+          <td>25</td>
+          <td>26</td>
+        </tr>
+        <tr>
+          <td>27</td>
+          <td>28</td>
+          <td>29</td>
+          <td>30</td>
+          <td>31</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    let currentMonth = new Date().getMonth();
+    let currentYear = new Date().getFullYear();
+
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const daysInMonth = (year, month) => new Date(year, month + 1, 0).getDate();
+
+    const events = {
+        "3-3": "Baccalaureate Mass",
+        "3-9": "Day of Valor",
+        "2-3": "Submission of Requirements",
+        "2-10": "Research Colloquium",
+        "3-21": "Awarding of MDA Cup",
+        "2-28": "Awarding of Sinesaysay"
+    };
+
+    const elements = {
+        monthTitle: document.querySelector('.month strong'),
+        yearSelect: document.getElementById('yearSelect'),
+        calendarTable: document.querySelector('table'),
+        prevBtn: document.getElementById('but2'),
+        nextBtn: document.getElementById('but')
+    };
+
+    function populateYearDropdown() {
+        elements.yearSelect.innerHTML = '';
+        for (let i = currentYear - 5; i <= currentYear + 5; i++) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.textContent = i;
+            elements.yearSelect.appendChild(option);
+        }
+        elements.yearSelect.value = currentYear;
+    }
+
+    function renderCalendar() {
+        elements.monthTitle.textContent = monthNames[currentMonth];
+        elements.yearSelect.value = currentYear;
+
+        let firstDay = new Date(currentYear, currentMonth, 1).getDay();
+        let totalDays = daysInMonth(currentYear, currentMonth);
+
+        let calendarHTML = `<tr>
+            <th>Sun</th><th>Mon</th><th>Tues</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+        </tr>`;
+
+        let dayCount = 1;
+        for (let i = 0; i < 6; i++) {
+            calendarHTML += '<tr>';
+            for (let j = 0; j < 7; j++) {
+                if (i === 0 && j < firstDay) {
+                    calendarHTML += '<td></td>';
+                } else if (dayCount > totalDays) {
+                    calendarHTML += '<td></td>';
+                } else {
+                    let eventKey = `${currentMonth + 1}-${dayCount}`;
+                    let eventText = events[eventKey] ? `title="${events[eventKey]}" class="event"` : '';
+                    let tooltip = events[eventKey] ? `<span class='tooltip'>${events[eventKey]}</span>` : '';
+                    calendarHTML += `<td ${eventText}>${dayCount}${tooltip}</td>`;
+                    dayCount++;
+                }
+            }
+            calendarHTML += '</tr>';
+        }
+        elements.calendarTable.innerHTML = calendarHTML;
+        addTooltipListeners();
+    }
+
+    function addTooltipListeners() {
+        document.querySelectorAll('.event').forEach(cell => {
+            cell.addEventListener('mouseover', function () {
+                const tooltip = this.querySelector('.tooltip');
+                if (tooltip) tooltip.style.display = 'block';
+            });
+            cell.addEventListener('mouseout', function () {
+                const tooltip = this.querySelector('.tooltip');
+                if (tooltip) tooltip.style.display = 'none';
+            });
+        });
+    }
+
+    elements.prevBtn.addEventListener('click', () => {
+        if (currentMonth === 0) {
+            currentMonth = 11;
+            currentYear--;
+        } else {
+            currentMonth--;
+        }
+        renderCalendar();
+    });
+
+    elements.nextBtn.addEventListener('click', () => {
+        if (currentMonth === 11) {
+            currentMonth = 0;
+            currentYear++;
+        } else {
+            currentMonth++;
+        }
+        renderCalendar();
+    });
+
+    elements.yearSelect.addEventListener('change', () => {
+        currentYear = parseInt(elements.yearSelect.value);
+        renderCalendar();
+    });
+
+    populateYearDropdown();
+    renderCalendar();
+});
+
+
+     document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menuToggle');
+    const sideMenu = document.getElementById('sideMenu');
+
+    menuToggle.addEventListener('click', function () {
+        sideMenu.classList.toggle('open');
+    });
+});
+
+function confirmLogout() {
+    if (confirm("Are you sure you want to log out?")) {
+        window.location.href = "../logout.html"; // Change this to your actual logout route
+        showNotification("You have been logged out.");
+    }
+}
+
+// Optional: Notification function
+function showNotification(message) {
+    alert(message);
+}
+
+    
+
+    </script>
+
+  </body>
+  </html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/04125a405c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="final1.css">
+    <title>School Works</title>
+</head>
+
+<body>
+    <button class="menu-toggle" id="menuToggle">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <div class="side-menu" id="sideMenu">
+        <ul>
+            <li>
+                <a href="#" class="logo">
+                    <span class="icon"><i class="fa-solid fa-code"></i></span>
+                </a>
+            </li>
+            <li>
+                <a href="teacher.html">
+                    <span class="icon"><i class="fa-solid fa-chart-line"><span style="color: #FF69B4; font-weight: 100;"> Dashboard</span></i></span>
+                </a>
+            </li>
+            <li>
+                <a href="student.html">
+                    <span class="icon"><i class="fa-solid fa-users"><span style="color: #FF69B4; font-weight: 100;"> Student</span></i></span>
+            </li>
+            <li>
+                <a href="school-work.html">
+                    <span class="icon"><i class="fa-solid fa-file"><span style="color: #FF69B4; font-weight: 100;"> School Works</span></i></span>
+                </a>
+            </li>
+            <li>
+                <a href="calendar.html">
+                    <span class="icon"><i class="fa-solid fa-calendar"><span style="color: #FF69B4; font-weight: 100;"> Calendar</span></i></span>
+                </a>
+            </li>
+            <li>
+                <a href="event.html">
+                    <span class="icon"><i class="fa-solid fa-star"><span style="color: #FF69B4; font-weight: 100;"> Events</span></i></span>
+                </a>
+            </li>
+            <li>
+                <a href="table.html">
+                    <span class="icon"><i class="fa-solid fa-clock"><span style="color: #FF69B4; font-weight: 100;"> Time Table</span></i></span>
+                </a>
+            </li>
+            <li>
+                <button class="logout-btn" onclick="confirmLogout()">
+                  <i class="icon fas fa-sign-out-alt"></i> Log Out
+                </button>
+              </li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="title1">School works</div>
+        
+        <!-- School Works Lists Section (now at the top) -->
+        <div class="works-container">
+            <div class="works-list submitted-list">
+                <h2><i class="fa-solid fa-check-circle"></i> Submitted Works</h2>
+                <div class="work-item">
+                    <h3>Research Paper - Final Draft</h3>
+                    <p>Submitted by: Boss Keng</p>
+                    <p>Submitted on: March 25, 2025</p>
+                </div>
+                <div class="work-item">
+                    <h3>PagPag Our Major Subject</h3>
+                    <p>Submitted by: Jimboyoyes</p>
+                    <p>Submitted on: March 24, 2025</p>
+                </div>
+                <div class="work-item">
+                    <h3>System na di matapos tapos</h3>
+                    <p>Submitted by: Vancess</p>
+                    <p>Submitted on: March 27, 2025</p>
+                </div>
+            </div>
+            
+            <div class="works-list pending-list">
+                <h2><i class="fa-solid fa-clock"></i> Pending Works</h2>
+                <div class="work-item">
+                    <h3>System pa ren na di pa tapos</h3>
+                    <p>Due: March 28, 2025</p>
+                    <p>Students remaining: 4</p>
+                </div>
+                <div class="work-item">
+                    <h3>Yung Event tas Students page</h3>
+                    <p>Due: March 27, 2025</p>
+                    <p>Students remaining: 2</p>
+                </div>
+                <div class="work-item">
+                    <h3>Final teacher Panel</h3>
+                    <p>Due: Mamaya</p>
+                    <p>Students remaining: 4</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-2">
+            <div class="Events">
+                <div class="title">
+                    <h2>Current Activities for students</h2>
+                </div>
+                <table>
+                    <tr>
+                        <th>Task Given</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>Written work #1</td>
+                        <td>Create an essay that reflect to yourself</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="Calendar">
+                <div class="title">
+                    <h2>Calendar</h2>
+                </div>
+                <table>
+                    <tr>
+                        <th>March, 20, 2025</th>
+                    </tr>
+                    <tr>
+                        <td>No Current Activity for today</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+       const menuToggle = document.getElementById('menuToggle');
+       const sideMenu = document.getElementById('sideMenu');
+   
+       menuToggle.addEventListener('click', function () {
+           sideMenu.classList.toggle('open');
+       });
+   });
+   
+   function confirmLogout() {
+       if (confirm("Are you sure you want to log out?")) {
+           window.location.href = "../logout.html"; // Change this to your actual logout route
+           showNotification("You have been logged out.");
+       }
+   }
+   
+   // Optional: Notification function
+   function showNotification(message) {
+       alert(message);
+   }
+   
+       </script>
+</body>
+</html>

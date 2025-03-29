@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/04125a405c.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="final1.css">
+        <title>Teacher's Panel</title>
+    </head> 
+    
+    <body> 
+        <button class="menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="side-menu" id="sideMenu">
+            <ul>
+                <li>
+                    <a href="#" class="logo">
+                        <span class="icon"><i class="fa-solid fa-code"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="teacher.html">
+                        <span class="icon"><i class="fa-solid fa-chart-line"><span style="color: #FF69B4; font-weight: 100;"> Dashboard</span></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="student.html">
+                        <span class="icon"><i class="fa-solid fa-users"><span style="color: #FF69B4; font-weight: 100;"> Student</span></i></span>
+                </li>
+                <li>
+                    <a href="school-work.html">
+                        <span class="icon"><i class="fa-solid fa-file"><span style="color: #FF69B4; font-weight: 100;"> School Works</span></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="calendar.html">
+                        <span class="icon"><i class="fa-solid fa-calendar"><span style="color: #FF69B4; font-weight: 100;"> Calendar</span></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="event.html">
+                        <span class="icon"><i class="fa-solid fa-star"><span style="color: #FF69B4; font-weight: 100;"> Events</span></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="table.html">
+                        <span class="icon"><i class="fa-solid fa-clock"><span style="color: #FF69B4; font-weight: 100;"> Time Table</span></i></span>
+                    </a>
+                </li>
+                <li>
+                    <button class="logout-btn" onclick="confirmLogout()">
+                      <i class="icon fas fa-sign-out-alt"></i> Log Out
+                    </button>
+                  </li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="title1">Dashboard</div>
+            <div class="cards">
+                <div class="card">
+                    <div class="box">
+                        <h1>Students</h1>
+                        <h3>50</h3>
+                    </div>
+                    <div class="icon-case">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <h1>Attendance</h1>
+                        <h3><br>Junior - 16/25<br>
+                        <br> Senior - 18/25 <br>
+                        </h3>
+                    </div>
+                    <div class="icon-case">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <h1>Time table</Table></h1>
+                        <h3><br>Science - 7:00<br>
+                            <br>Math- 8:00<br>
+                        </h3>
+                    </div>
+                    <div class="icon-case">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <h1>School Works</h1>
+                        <h3>Project - system</h3>
+                    </div>
+                    <div class="icon-case">
+                    </div>
+                </div>
+            </div>
+            <div class="content-2">
+                <div class="Events">
+                    <div class="title">
+                        <h2>Time table</h2>
+                        <a href="table.html" class="btn">View All</a>
+                    </div>
+                    <table>
+                        <tr>
+                            <th>Current schedule</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>Senior High School Computer Programming</td>
+                            <td>2:50 PM - 4:30 PM </td>
+                        </tr>
+                        
+                    </table>
+                </div>
+                <div class="Calendar">
+                    <div class="title">
+                        <h2>Calendar</h2>
+                        <a href="calendar.html" class="btn">View All</a>
+                    </div>
+                    <table>
+                        <tr>
+                            <th>March, 20, 2025</th>
+                        </tr>
+
+                        <tr>
+                            <td>No Current Activity for today</td>
+                          
+                        </tr>
+                        
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+     document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menuToggle');
+    const sideMenu = document.getElementById('sideMenu');
+
+    menuToggle.addEventListener('click', function () {
+        sideMenu.classList.toggle('open');
+    });
+});
+
+function confirmLogout() {
+    if (confirm("Are you sure you want to log out?")) {
+        window.location.href = "../logout.html"; // Change this to your actual logout route
+        showNotification("You have been logged out.");
+    }
+}
+
+// Optional: Notification function
+function showNotification(message) {
+    alert(message);
+}
+
+    </script>
+    </body>
+</html>
